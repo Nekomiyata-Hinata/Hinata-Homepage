@@ -67,5 +67,49 @@
     enable_page_level_ads: true
   });
 </script>
-
+    <!-- waifu-tips.js 依赖 JQuery 库 -->
+    <script src="/js/jquery.min.js?v=3.3.1"></script>
+    
+    <!-- 实现拖动效果，需引入 JQuery UI -->
+    <script src="/js/jquery-ui.min.js?v=1.12.1"></script>
+    
+    <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+        
+    <script src="/js/waifu-tips.js"></script>
+    <script src="/js/live2d.js"></script>
+    <script src="/js/waifu-tips.min.js?v=1.4.2"></script>
+    <script src="/js/live2d.min.js?v=1.0.5"></script>
+    <script type="text/javascript">
+        /* 可直接修改部分参数 */
+        live2d_settings['modelId'] = 1;                  // 默认模型 ID
+        live2d_settings['modelTexturesId'] = 80;         // 默认材质 ID
+        live2d_settings['modelStorage'] = false;         // 储存模型 id
+        live2d_settings['canCloseLive2d'] = false;       // 关闭看板娘
+        live2d_settings['canTurnToHomePage'] = true;    // 返回首页
+        live2d_settings['waifuSize'] = '500x435';
+        live2d_settings['waifuTipsSize'] = '550x150';    // 提示框大小
+        live2d_settings['waifuFontSize'] = '25px';       // 提示框字体
+        live2d_settings['waifuToolFont'] = '36px';       // 工具栏字体
+        live2d_settings['waifuToolLine'] = '50px';       // 工具栏行高
+        live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+        live2d_settings['canTurnToAboutPage'] = true;         // 
+        live2d_settings['homePageUrl'] = 'https://Nekomiyata-Hinata.github.io/';       // 
+        live2d_settings['aboutPageUrl'] = 'https://Nekomiyata-Hinata.github.io/';   //  
+        live2d_settings['waifuMinWidth'] = '768px';
+        live2d_settings['waifuDraggable'] = 'disable';
+        /* 在 initModel 前添加 */
+        initModel("/js/waifu-tips.json?v=1.4.2")
+   </script>
 </head>
